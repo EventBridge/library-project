@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.table {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    height: 250px;
+    width: 200px;
+    background-color: rgb(95, 95, 255);
+}
