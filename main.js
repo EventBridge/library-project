@@ -11,11 +11,32 @@ function Book(title, author, numOfPages, read) {
     this.read = read;
 }
 
-function addBookToLibrary() {
-    console.log("Added Book");
-}
-
 const table = document.querySelector(".table");
+
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const numOfPagesInput = document.querySelector("#numOfPages");
+const readInput = document.querySelector("#read");
+
+function addBookToLibrary() {
+    table.innerHTML = "";
+    console.log("Added Book");
+    let hasRead;
+    if (readInput.checked) {
+        hasRead = "read";
+    } else {
+        hasRead = "not read";
+    }
+    myLibrary.push(
+        new Book(
+            titleInput.value,
+            authorInput.value,
+            numOfPagesInput.value,
+            hasRead
+        )
+    );
+    displayCards();
+}
 
 function createCard(item) {
     const card = document.createElement("div");
