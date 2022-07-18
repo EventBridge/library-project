@@ -12,7 +12,7 @@ function Book(title, author, numOfPages, read) {
 }
 
 function addBookToLibrary() {
-    // do stuff here
+    console.log("Added Book");
 }
 
 const table = document.querySelector(".table");
