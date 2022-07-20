@@ -38,6 +38,8 @@ function addBookToLibrary() {
     displayCards();
 }
 
+let currentIndex;
+
 function createCard(item) {
     const card = document.createElement("div");
     card.className = "card";
@@ -51,17 +53,24 @@ function createCard(item) {
     const readDiv = document.createElement("div");
     readDiv.textContent = item.read;
 
+    card.dataset.index = currentIndex;
+    const indexDiv = document.createElement("div");
+    indexDiv.textContent = card.dataset.index;
+
     card.append(titleDiv);
     card.append(authorDiv);
     card.append(pageDiv);
     card.append(readDiv);
+    card.append(indexDiv);
 
     table.append(card);
 }
 
 function displayCards() {
+    currentIndex = 0;
     myLibrary.forEach((item) => {
         createCard(item);
+        currentIndex++;
     });
 }
 
