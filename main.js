@@ -57,11 +57,19 @@ function createCard(item) {
     const indexDiv = document.createElement("div");
     indexDiv.textContent = card.dataset.index;
 
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.onclick = function () {
+        myLibrary.splice(this.dataset.index, 1);
+        card.remove();
+    };
+
     card.append(titleDiv);
     card.append(authorDiv);
     card.append(pageDiv);
     card.append(readDiv);
     card.append(indexDiv);
+    card.append(removeButton);
 
     table.append(card);
 }
